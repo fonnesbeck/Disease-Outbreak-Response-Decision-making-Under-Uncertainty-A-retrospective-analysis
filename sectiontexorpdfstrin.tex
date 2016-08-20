@@ -44,3 +44,15 @@ another. To this end, the logit-transformed set of probabilities was
 modeled as a multivariate normal random variable, where the
 corresponding covariance matrix was tridiagonal, incorporating a
 correlation term \(\rho\)that was assumed constant among groups.
+
+\(
+\Sigma = \left[{
+\begin{array}{c}
+  {\sigma^2} & {\sigma^2 \rho} & 0& \ldots & {0} & {0}  \\
+  {\sigma^2 \rho} & {\sigma^2} &  \sigma^2 \rho & \ldots & {0}  & {0} \\
+  {0} & \sigma^2 \rho & {\sigma^2} & \ldots & {0} & {0} \\
+  \vdots & \vdots & \vdots &  & \vdots & \vdots\\
+  {0} & {0} & 0 & \ldots &  {\sigma^2} & \sigma^2 \rho  \\
+{0} & {0} & 0 & \ldots & \sigma^2 \rho &  {\sigma^2} 
+\end{array}
+}\right]\)
