@@ -1,5 +1,4 @@
 abstract.tex
-Author_list_Fonnesbe.tex
 sectionIntroductionl.tex
 sectiontexorpdfstrin.tex
 figures/image04/image04.png
