@@ -3,7 +3,6 @@ sectionIntroductionl.tex
 sectiontexorpdfstrin.tex
 figures/image04/image04.png
 _First_macro_on.tex
-figures/image10/image10.png
 that_assumes_that_in.tex
 emphtextbfModel_Fitt.tex
 emphtextbfEvaluating.tex
