@@ -15,4 +15,5 @@ textbfFigure_3_A_The.tex
 figures/image13/image13.png
 textbfFigure_4_Estim.tex
 figures/image12/image12.png
+textbfFigure_5_Estim.tex
 sectionDiscussionlab.tex
