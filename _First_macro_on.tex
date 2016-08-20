@@ -1,0 +1,116 @@
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(\beta^{(conf)} \sim N(\mu,\Sigma)\)
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(logit(p_{a})\  = \ {{\beta_{a}}^{(conf)}}_{}\)
+
+To estimate the true number of cases for each age group, the estimated
+probabilities were used to correct the clinic-reported cases, as modeled
+by a binomial distribution, and the total number of cases then
+calculated as the sum of this corrected value and the lab-confirmed
+cases:
+
+df\({x_{a}}^{(clinic)} \sim Bin({n_{a}}^{(clinic)},p_{a})\)
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(I_{a} = {x_{a}}^{(clinic)} + {x_{a}}^{(lab)}\)
+
+This was used to inform the estimate of the latent age distribution of
+susceptibles, modeled as a Dirichlet distribution:
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(f^{(age)} \sim Dirichlet(1)\)
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(I \sim Multinomial(f^{(age)})\)
+
+where \(f^{(age)}\)is a vector of age-specific proportions and 1 a
+vector of ones, used as a non-informative prior for the Dirichlet.
+
+\subsection{\texorpdfstring{\emph{Disease Dynamics
+Model}}{Disease Dynamics Model}}\label{disease-dynamics-model}
+
+Initial Susceptible Population
+
+We used the population age structure in 1996 and the history of
+vaccination, through routine and campaigns, prior to 1997 to estimate
+the starting number of susceptible individuals in each age class at the
+beginning of the 1997 outbreak. We model the number of susceptible
+individuals in each annual age class at the beginning of 1997,
+S\textsubscript{a,0} as a finite mixture of local susceptibles,
+S\textsubscript{a,L}, and excess susceptibles, S\textsubscript{a,E} ,
+where excess susceptibles are those that are not consistent with local
+demographic processes. We model local susceptibles,
+S\textsubscript{a,L}, as
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \({S_{a}}^{(local)} = N_{a}\pi(vacc)\pi(SIA)\pi(natural)\)
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \({S_{a}}^{(local)} = N_{a}\left( 1 - V_{a}*0.85 \right)\left( 1 - {\psi_{j}I\left( a,j \right)}_{} \right)\left\lbrack \exp\left( \theta_{a - y} \right) \right\rbrack\).
+
+Where N\textsubscript{a} is the population size in age class \emph{a},
+V\textsubscript{a} is the routine vaccination coverage experienced by
+age class a when the were eligible for routine vaccination between 9 and
+12 months of age, \(\psi_{j}\)is the coverage of the
+j\textsuperscript{th} SIA and \emph{I\textsubscript{a,j}} is an
+indicator function that is 1 if age class \emph{a} was eligible for the
+j\textsuperscript{th} SIA and 0 otherwise, and \(\theta_{i}\)is the
+force of infection in year \emph{i} (i.e. the contribution of natural
+immunity). The force of infection is assumed to be 1/A in the absence of
+vaccination, where \(A = \frac{L}{R_{0}}\) (REF Anderson and May) is the
+mean age of infection in the absence of vaccination and
+R\textsubscript{0} is the basic reproduction number. The force of
+infection, \(\theta_{i}\), in the presence of vaccination is then
+approximated as 1-p/A (REF Anderson and May). The basic reproduction
+number, R\textsubscript{0} is estimated below. We present an analysis of
+sensitivity to assumptions about historical vaccination coverage in the
+supplement.
+
+We modeled excess susceptibles as using a data augmentation approach. A
+latent number of susceptibles, constrained to a value uniformly
+distributed between zero and 1 million, were added to the model. These
+excess susceptibles were assigned an age distribution, modeled Gaussian
+with mean \emph{μ\textsubscript{age}} and standard deviation
+\emph{σ\textsubscript{age}} and added to the resident susceptibles for a
+total susceptible count in the Sao Paulo population:
+\emph{S\textsubscript{a} = S\textsubscript{a}\textsuperscript{(local)} +
+S\textsubscript{a}\textsuperscript{(excess)}} . As the number and
+distribution of excess susceptibles were modeled as latent variables,
+the estimates of their values were driven by the data themselves, as
+opposed to being imposed upon the model. This provided the means for
+accounting for infections that may not have been provided by a local
+population of susceptibles, but potentially by a pool of migrants from
+areas of low immunity. As a basis for comparison, we fit a version of
+the full model assuming no excess susceptibles (\emph{i.e.} the
+distribution of susceptibles is forced to be consistent with local
+demographics), in addition to the one described above, in which excess
+susceptibles are explicitly added.
+
+The realized susceptibility \(p_{\text{s\ }}\)was modeled as a
+normally-distributed random variable on the logit scale, to account for
+variability due to unmeasured factors:
+
+NEED TO FIX THIS NOTATION
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(logit(p_{s})\  \sim N(\mu_{s},{\sigma_{s})}^{}\)
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(logit(\pi_{s})\  = \ \mu_{s}\)
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(\pi_{s} = \pi^{(natural)}\pi^{(SIA)}\pi^{(vacc)}\)
+
+We model the number of measles cases in each age class, \emph{a}, and
+time step, \emph{t}, as
+
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(I_{a} \sim\)Poisson\(\left( {S_{a,t - 1}\frac{I_{t - 1}B_{a}}{N}}_{} \right)\)
+
+Where S\textsubscript{a,t-1} is the number of susceptibles in age class
+a at time \emph{t-1, I\textsubscript{t-1}} a row vector of the number of
+infected individuals in each age class at time t-1, and
+B\textsubscript{a} is the a\textsuperscript{th} column of the Who
+Acquires Infection From Whom (WAIFW) matrix. We model the WAIFW matrix
+as an assortative matrix, B,

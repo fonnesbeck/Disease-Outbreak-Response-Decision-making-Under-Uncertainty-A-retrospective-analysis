@@ -1,0 +1,114 @@
+\section{Introduction}\label{introduction}
+
+Resurgent outbreaks of childhood infections following long periods of
+relative absence are an increasingly common phenomenon (REF measles,
+mumps, pertussis). Several factors may contribute to the occurrence of
+such outbreaks. McLean and Anderson (REF: 1988) predicted that such
+outbreaks should be expected because of the ``honeymoon'' phenomenon
+following the introduction of vaccination whereby post-vaccination
+cohorts no longer experience high rates of natural immunization to
+supplement vaccination. Further, population-level vaccination rates may
+decline over time as the reduction in individual infection risk (REF)
+leads to apathy within the population, or as immigration from areas of
+low immunity becomes substantial (REF). In addition, local stochastic
+extinction may result in temporary breakdown of local transmission, even
+though populations remain susceptible to subsequent outbreaks upon the
+reintroduction of infection (REF Ferrari 2008, and others).
+
+Increasingly, in the event of a measles outbreak, outbreak response
+immunization (ORI) has been recommended as an intervention. The goals of
+these ORIs are two-fold: 1) to protect high risk groups (\emph{i.e.}
+young children) and 2) to attenuate the current outbreak (REF Cairns et
+al, Grais et al). To achieve the former goal, ORI campaigns routinely
+target children between the ages of 9-59 months of age\footnote{though
+  there has been increasing discussion about vaccinating children from
+  6-9m}. To achieve the latter goal, the campaign must achieve some
+target level of immunization --- \emph{i.e.} a percentage reduction of
+the susceptible population --- such that effective reproductive number,
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(R_{e}\), will be below 1 and outbreak will end. From the standard SIR
+model, this level of immunization is \emph{P\textsubscript{c} =
+1-1/R\textsubscript{e}} {[}REF Anderson \& May 1991{]}. To identify this
+target coverage and appropriately plan a campaign, one must estimate
+both the value of \(R_{e}\) itself, and the age distribution of the
+susceptible population. The former determines the necessary reduction of
+the susceptible population required to end the outbreak, while the
+latter determines the critical age classes to be targeted in a campaign
+in order to most efficiently achieve this reduction in susceptibility.
+For example, if \emph{R\textsubscript{e}=1.5} one must then reduce the
+susceptible fraction by 33\%; if one can reasonably assume to achieve
+80\% immunization of susceptibles in the target age groups, then one
+would need target individuals up to the age that is the the
+100*(0.33/0.8) = 41.25th percentile of the susceptible population.
+
+Experience with past outbreaks can provide guidance about likely values
+of \(R_{e}\) (REF Durrheim) and the likely distribution of the
+susceptible population (REF Goodson 2011, Takahashi 2014). However, in
+the case of resurgent outbreaks, which follow periods of relatively low
+measles incidence, there may be insufficient data on which to base
+estimates. In these settings, it is the current outbreak itself which
+may provide the most relevant empirical data (REF Durrheim 2014, Merl
+2009, Shea 2014). A variety of methods are available to estimate
+% First macro on next line not (yet) supported by LaTeXML: 
+% \(R_{e}\) from early surveillance data (REF Durheim 2014 {[}references
+%within -\/- Gay et al 2004, Chiew et al 2014, Lim et al 2014{]}, Ferrari
+et al 2006, Lipsitch et al 2003). Formal evaluation of the age
+distribution of the susceptible population during an outbreak has been
+less common; decisions about age targeting have been classically based
+on prior experience or early evaluation of clinically confirmed cases
+(REF Minetti 2013).
+
+The age distribution of the susceptible population is rarely known at
+the start of a measles outbreak. The mean and variance of the age
+distribution of susceptible individuals is expected to increase as the
+prevalence of infection declines (Goodson 2011, Ferrari et al 2013) and
+during periods of measles absence (Durheim 2014). As a result,
+historical surveillance data may be misleading as to the current
+distribution of susceptibles. Initial estimates of the susceptible
+population can be reconstructed from demographic rates, historical
+records of routine and supplemental vaccination coverage, and measles
+incidence; however, uncertainty in these rates and historical incidence
+mean that \emph{a priori} estimates of the susceptible population may be
+significantly biased. The 1997 measles outbreak in Sao Paulo, Brazil,
+presented in detail below had many more adolescent and adult cases than
+was expected based on historical rates {[}REF{]}. This pattern of
+unexpectedly wide age distributions of cases has been recently seen in
+outbreaks in Malawi {[}REF: Minetti{]} and Mongolia {[}REF{]}.
+
+Clinical confirmation of measles cases has relatively low specificity,
+particularly in settings of low prevalence (REF Deitz et al, Guy et al,
+Hutchins et al, Ho et al ) when other illnesses that result in fever and
+rash (e.g. rubella) may be misdiagnosed as measles (Ho et al 2014,
+Mancini 2014). Given that the various sources of febrile illness may
+disproportionately affect different age classes, reliance on a clinical
+definition alone may result in a biased assessment of the age classes at
+risk (REF Hutchinson et al, Durrheim 2014). Further, misdiagnosis of
+cases may bias the assessment of the rate of increase of total cases and
+lead to a biased estimate of \(R_{e}\) and hence the vaccination
+coverage necessary to limit the outbreak. Though serological
+confirmation of measles cases is preferred to clinical confirmation,
+resources often limit the proportion of clinical cases that can be
+confirmed by serology in outbreak settings. Here we present an epidemic
+model that uses serological confirmation on a subset of cases to
+
+We present a retrospective analysis of a resurgent measles outbreak in
+Sao Paulo, Brazil in 1996-7. This outbreak followed several years of
+relatively low measles incidence as a result of both routine and
+supplemental measles vaccination. The outbreak itself resulted in over
+30,000 confirmed cases in Sao Paulo State, with an unexpectedly high
+proportion of cases in adults; 60\% were in individuals greater than 20
+years of age. As a consequence, typical childhood-based ORIs would not
+be expected to result in sufficient immunity to limit the outbreak. We
+develop a novel statistical model that combines an \emph{a priori} model
+of the susceptible population, a time series model of the progression of
+the outbreak, and an age-specific model of IgM serological confirmation
+of suspected cases to estimate \(R_{e}\)and the age distribution of the
+susceptible population. To illustrate how real-time surveillance could
+be applied to inform the design of ORI age targets, we show generate
+estimates and the resulting ORI target recommendations at time points 1
+and 2 months prior to the non-selective vaccination campaign that was
+conducted on 15 August. We argue that a flexible approach to ORIs can
+better incorporate the information gained in the early stages of an
+outbreak to identify campaign age targets and that unforeseen biases in
+clinical diagnosis can be mitigated through the incorporation of
+serological confirmation.
