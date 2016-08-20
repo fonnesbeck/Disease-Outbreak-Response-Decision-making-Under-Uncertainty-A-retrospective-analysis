@@ -71,7 +71,9 @@ I_a &=& x_a^{(clinic)}+x_a^{(lab)}
 
 This was used to inform the estimate of the latent age distribution of susceptibles, modeled as a Dirichlet distribution:
 
-f(age)Dirichlet(1)
-IMultinomial(f(age))
+\begin{eqnarray}
+f^{(age)} &\sim& \text{Dirichlet}(\mathbf{1}) \\
+I &\sim& \text{Multinomial}(f^{(age)})
+\end{eqnarray}
 
-where f(age)is a vector of age-specific proportions and 1 a vector of ones, used as a non-informative prior for the Dirichlet.
+where \(f^{(age)}\)is a vector of age-specific proportions and \(\mathbf{1}\) a vector of ones, used as a non-informative prior for the Dirichlet.
