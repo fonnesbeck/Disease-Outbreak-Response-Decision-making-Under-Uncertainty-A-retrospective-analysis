@@ -32,7 +32,7 @@ conditional on clinical diagnosis. Individual lab confirmation events
 \emph{c\textsubscript{i}} were modeled as Bernoulli random variables,
 with the probability of confirmation being allowed to vary by age group:
 
-\(c_{i} \sim Bernoulli(p_{a\lbrack i\rbrack})\)
+\[c_{i} \sim Bernoulli(p_{a\lbrack i\rbrack})\]
 
 where \(a\lbrack i\rbrack\) denotes the age group for the individual
 indexed by \emph{i}. There were 16 age groups, the first 15 of which
@@ -56,3 +56,22 @@ correlation term \(\rho\)that was assumed constant among groups.
 {0} & {0} & 0 & \ldots & \sigma^2 \rho &  {\sigma^2} 
 \end{array}
 }\right]\)
+
+\begin{eqnarray}
+\beta^{(conf)} &\sim& N(\mu, \Sigma) \\
+\text{logit}(p_a) &=& \beta_a^{(conf)}
+\end{eqnarray}
+
+To estimate the true number of cases for each age group, the estimated probabilities were used to correct the clinic-reported cases, as modeled by a binomial distribution, and the total number of cases then calculated as the sum of this corrected value and the lab-confirmed cases:
+
+\begin{eqnarray}
+\text{df}x_a^{(clinic)} &\sim& \text{Bin}(n_a^{(clinic)},p_a) \\
+I_a &=& x_a^{(clinic)}+x_a^{(lab)}
+\end{eqnarray}
+
+This was used to inform the estimate of the latent age distribution of susceptibles, modeled as a Dirichlet distribution:
+
+f(age)Dirichlet(1)
+IMultinomial(f(age))
+
+where f(age)is a vector of age-specific proportions and 1 a vector of ones, used as a non-informative prior for the Dirichlet.
