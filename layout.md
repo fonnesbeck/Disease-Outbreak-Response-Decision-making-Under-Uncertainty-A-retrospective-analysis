@@ -1,7 +1,6 @@
 abstract.tex
 sectionIntroductionl.tex
 sectiontexorpdfstrin.tex
-figures/image04/image04.png
 _First_macro_on.tex
 that_assumes_that_in.tex
 emphtextbfModel_Fitt.tex
