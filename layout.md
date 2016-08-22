@@ -12,7 +12,6 @@ figures/image11/image11.png
 textbfFigure_2__The.tex
 figures/image08/image08.png
 textbfFigure_3_A_The.tex
-figures/Unknown-1/Unknown.png
 figures/image13/Unknown-1.png
 textbfFigure_4_Estim.tex
 figures/Unknown/Unknown.png
