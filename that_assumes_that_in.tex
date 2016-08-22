@@ -5,10 +5,10 @@ Model}}{Disease Dynamics Model}}\label{disease-dynamics-model}
 
 We used the population age structure in 1996 and the history of vaccination, through routine and campaigns, prior to 1997 to estimate the starting number of susceptible individuals in each age class at the beginning of the 1997 outbreak.  We model the number of susceptible individuals in each annual age class at the beginning of 1997, \(S_{a,0}\) as a finite mixture of local susceptibles, \(S_{a,L}\), and excess susceptibles, \(S_{a,E}\) , where excess susceptibles are those that are not consistent with local demographic processes.  We model local susceptibles, \(S_{a,L}\), as 
 
-\begin{eqnarray}
+\[\begin{eqnarray}
 S_a^{(local)} &=& N_a \pi(\text{vacc}) \pi(\text{SIA}) \pi(\text{natural}) \\
 &=& N_a (1- 0.85 V_a) \prod_{j=1}^2 \left[1- \psi_j I(a,j) \right] \left[\exp \sum_{y=0}^{a-1} \theta_{a-y} \right].
-\end{eqnarray}
+\end{eqnarray}\]
 
 Where \(N_a\) is the population size in age class \(a\), \(V_a\) is the routine vaccination coverage experienced by age class a when the were eligible for routine vaccination between 9 and 12 months of age, \(j_{is}\) the coverage of the \(j\)th SIA and \(I_{a,j}\) is an indicator function that is 1 if age class a was eligible for the \(j\)th SIA and 0 otherwise, and \(\theta_i\) the force of infection in year i (i.e. the contribution of natural immunity).  The force of infection is assumed to be 1/A in the absence of vaccination, where \(A=\frac{L}{R_0}\) \cite{Anderson_1981} is the mean age of infection in the absence of vaccination and \(R_0\) is the basic reproduction number. The force of infection \(\theta_i\) in the presence of vaccination is then approximated as \(1-p/A\) \cite{Anderson_1981}.  The basic reproduction number \(R_0\) is estimated below.  We present an analysis of sensitivity to assumptions about historical vaccination coverage in the supplement.
 
