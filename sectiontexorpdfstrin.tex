@@ -2,23 +2,29 @@
 Model}}{Confirmation Bias Model}}\label{confirmation-bias-model}
 
 We specified a structured case confirmation submodel to retrospectively
-determine the age group-specific probabilities of lab confirmation, i.e.
-lab positive for measles specific IgM, for measles in Sao Paulo,
+determine the age group-specific probabilities of lab confirmation (\emph{i.e.}
+lab positive for measles specific IgM) for measles in Sao Paulo,
 conditional on clinical diagnosis. Individual lab confirmation events
-\emph{c\textsubscript{i}} were modeled as Bernoulli random variables,
+\(c_i\) were modeled as Bernoulli random variables,
 with the probability of confirmation being allowed to vary by age group:
 
-\[c_{i} \sim Bernoulli(p_{a\lbrack i\rbrack})\]
+\[c_{i} \sim Bernoulli(p_{a[i]})\]
 
-where \(a\lbrack i\rbrack\) denotes the age group for the individual
+where \(a[i]\) denotes the age group for the individual
 indexed by \emph{i}. There were 16 age groups, the first 15 of which
 were 5-year age intervals \emph{{[}0,5), {[}5, 10), \ldots{} , {[}70,
-75)}, with the 16th interval including all individuals 75 years and
+75)}, with the last interval including all individuals 75 years and
 older. Since our choices of age group boundaries were arbitrary, we
 allowed the probabilities of adjacent groups to be correlated with one
 another. To this end, the logit-transformed set of probabilities was
-modeled as a multivariate normal random variable, where the
-corresponding covariance matrix was tridiagonal, incorporating a
+modeled as a multivariate normal random variable: 
+
+\begin{eqnarray}
+\beta^{(conf)} &\sim& N(\mu, \Sigma) \\
+\text{logit}(p_a) &=& \beta_a^{(conf)}
+\end{eqnarray}
+
+where the corresponding covariance matrix was tridiagonal, incorporating a
 correlation term \(\rho\)that was assumed constant among groups.
 
 \[
@@ -33,19 +39,15 @@ correlation term \(\rho\)that was assumed constant among groups.
 \end{array}
 }\right]\]
 
-\begin{eqnarray}
-\beta^{(conf)} &\sim& N(\mu, \Sigma) \\
-\text{logit}(p_a) &=& \beta_a^{(conf)}
-\end{eqnarray}
 
-To estimate the true number of cases for each age group, the estimated probabilities were used to correct the clinic-reported cases, as modeled by a binomial distribution, and the total number of cases then calculated as the sum of this corrected value and the lab-confirmed cases:
+To estimate the true (latent) number of cases for each age group \(I_a\), the estimated probabilities were used to correct the clinic-reported cases \(n_a^{(clinic)}\), as modeled by a binomial distribution, and the total number of cases then calculated as the sum of this estimated value \(x_a^{(clinic)}\) and the lab-confirmed cases \(x_a^{(lab)}\):
 
 \begin{eqnarray}
-\text{df}x_a^{(clinic)} &\sim& \text{Bin}(n_a^{(clinic)},p_a) \\
+x_a^{(clinic)} &\sim& \text{Bin}(n_a^{(clinic)},p_a) \\
 I_a &=& x_a^{(clinic)}+x_a^{(lab)}
 \end{eqnarray}
 
-This was used to inform the estimate of the latent age distribution of susceptibles, modeled as a Dirichlet distribution:
+The set of \(\{I_a\}\) was, in turn, used to inform the estimate of the latent age distribution of susceptibles, modeled as a Dirichlet distribution:
 
 \begin{eqnarray}
 f^{(age)} &\sim& \text{Dirichlet}(\mathbf{1}) \\
