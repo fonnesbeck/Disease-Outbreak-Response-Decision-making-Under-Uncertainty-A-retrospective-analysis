@@ -18,48 +18,20 @@ age, and those older than 23 years would have been born prior to a national immu
 to have experienced natural infection during their childhood. We estimated that excess susceptibles between 15-35 years of age may have accounted for 60\% {[}verify exact value and CI{]} of all susceptibles during the 1997 outbreak. We term these as \emph{excess} susceptibles because they are
 excess relative to the expected age distribution of susceptibles based on historical rates of natural infection, routine vaccination, and SIAs. We are unable to positively identify the source of these excess susceptibles; they may have been the result of over-estimating the coverage of previous
 vaccination programs, or migrants from low coverage or low transmission risk areas that were unlikely to be exposed to vaccination or natural infection. While the former explanation is possible, insufficient vaccination coverage would be expected to result in more circulating infection, which would still likely result exposure to natural infection, and thus immunity, by adulthood. The latter explanation requires that individuals were recent immigrants to Sao Paulo and had not been exposed to either vaccination or natural infection as children in the region that the emigrated from. Measles rarely persists endemically in small populations below some critical community size \cite{Conlan_2007, Keeling_1997}; thus it is possible that recent immigrants from small villages might have not been exposed to natural infection. \citet{Camargo_2000} conducted a case-control trial after the 1997 outbreak and found that recent immigration to Sao Paulo was a significant risk factor for measles infection during the outbreak. Further, immigration rates into Sao Paulo in 1991 were highest among individuals between 15 and 30 years of age  {[}REF de Moraes and Fundacao
-Seade{]}, which is consistent with the age distribution of the excess
-susceptibles from our fitted model. While this does not confirm that
-immigration or gaps in prior immunization were the source of the adult
-susceptibles during the 1997 outbreak, this analysis does indicate that
-these adult susceptibles played a significant role in the outbreak;
-removing the excess susceptibles would have resulted in a reduction of
-R\_E at the start of the outbreak to less than 1. Other recent measles
-outbreaks have exhibited this same age-profile, with an unexpectedly
-large number of adult cases; e.g. Malawi \cite{Minetti_2013}, Mongolia
-{[}REF{]}, China {[}is there a REF?{]}. Thus, strategies for monitoring
-and targeting immunity gaps in adults may be useful in preventing future
-outbreaks and outbreak response strategies should consider
-adult-targeted vaccination when surveillance indicates a large number of
-adult susceptibles.
+Seade{]}, which is consistent with the age distribution of the excess susceptibles estimated by our models. While this does not confirm that
+immigration or gaps in prior immunization were the source of the adult susceptibles during the 1997 outbreak, this analysis does suggest that
+these adult susceptibles may have played a significant role in the outbreak; absent the excess susceptibles, $R_E$ at the start of the outbreak would have been comfortably less than 1. Other recent measles outbreaks have exhibited this same age-profile, with an unexpectedly large number of adult cases (\emph{e.g.} Malawi \cite{Minetti_2013}, Mongolia {[}REF{]}, China {[}is there a REF?{]}). Thus, strategies for monitoring and targeting immunity gaps in adults may be useful in preventing future outbreaks. Moreover, outbreak response strategies should consider adult-targeted vaccination when surveillance indicates a large number of adult susceptibles.
 
-Though our models consider the age distribution of susceptibles we make
-very simplistic assumptions about age-specific transmission; namely that
-within age-class transmission is the same for all ages, and between
-age-class transmission decays exponentially with difference in ages.
-Considerable recent work has shown that age-specific mixing rates are
-likely to vary considerably and may be culturally specific  {[}REF
-Massong, etc{]}. It is possible that higher contact, and thus
-transmission, rates among adults means that adult susceptibles
-disproportionately contributed to this outbreak. Fitting an age-specific
-transmission matrix with differential age-specific rates would have
-greatly inflated the number of unknown parameters and is beyond the
-scope of this work. {[}reference to Samit's paper if its out{]}
+Though our models account for the age distribution of susceptibles, we make very simplistic assumptions about age-specific transmission; namely that
+within age-class transmission is the same for all ages, and between age-class transmission decays exponentially with difference in ages. Considerable recent work has shown that age-specific mixing rates are likely to vary considerably and may be culturally specific \cite{Mossong_2008}. It is possible that higher contact (and thus, transmission) rates among adults means that adult susceptibles disproportionately contributed to this outbreak. Fitting an age-specific transmission matrix with differential age-specific rates would have greatly inflated the model complexity and is beyond the scope of this work. {[}reference to Samit's paper if its out{]}
 
-There are many potential explanations for the age-specific serological
-confirmation bias for cases with clinical symptoms. There are many
-etiologies that may generate fever and rash symptoms in young children
-{[}REF -\/- Orenstein?{]}, which would increase the rate of false
-positives in children based on clinical symptoms alone. Further, young
-children may be brought to clinic shortly after the onset of symptoms,
-when IgM titers may not yet have reached detectable levels. Regardless
-of the cause of this bias, the result is that the ability to assess the
-overall age distribution of cases may tend to underestimate the role of
-adults if based on clinical confirmation alone. Further, as the age
-distribution of cases presenting with symptoms may change over the
-course of an outbreak (give examples from this outbreak), clinical cases
-may reflect time-varying confirmation and bias estimates of transmission
-rates. Here, by correcting for age-specific confirmation bias, we also
+There are several potential explanations for the age-specific serological confirmation bias for cases with clinical symptoms. There are many
+etiologies that may generate fever and rash symptoms in young children {[}REF -\/- Orenstein?{]}, which would increase the rate of false
+positives in children based on clinical symptoms alone. Further, young children may be brought to clinic shortly after the onset of symptoms,
+when IgM titers may not yet have reached detectable levels. Regardless of the cause of this bias, the result is that assessing the
+overall age distribution of cases may tend to underestimate the role of adults if based on clinical confirmation alone. Further, as the age
+distribution of cases presenting with symptoms may change over the course of an outbreak (give examples from this outbreak), clinical cases
+may reflect time-varying confirmation and bias estimates of transmission rates. Here, by correcting for age-specific confirmation bias, we also
 necessarily correct for temporal variation in false positives. We see
 the effect of this in the higher estimated \(R_E\) using the confirmation
 bias corrected model with the 15 June data; though the model predicts
