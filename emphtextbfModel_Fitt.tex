@@ -1,14 +1,6 @@
 \subsection{Model Fitting}\label{model-fitting}
 
-Our model was fit using data truncated at two different dates during the
-outbreak, to simulate the information state at June 15 and July 15,
-1997. These two dates, which include 3698 and 11,982 cases,
-respectively, represent two contrasting levels of available monitoring
-data on which to potentially base intervention decisions. Hence,
-excluding any potential lags in reporting, the model was fit only to the
-information that would have been available at those time points (this
-includes the estimation of age-specific confirmation bias). Hence, four
-different management scenarios were modeled:
+Our model was fit using data truncated at two different dates during the outbreak, to simulate the information state at June 15 and July 15, 1997. These two dates, which include 3698 and 11,982 cases, respectively, represent two contrasting levels of available monitoring data on which to potentially base intervention decisions. Hence, excluding any potential lags in reporting, the model was fit only to the information that would have been available at those time points (this includes the estimation of age-specific confirmation bias). Hence, four different management scenarios were modeled:
 
 \begin{itemize}
 \item June 15 information state, adjusted for age-specific confirmation bias
@@ -17,9 +9,5 @@ different management scenarios were modeled:
 \item July 15 information state, unadjusted for confirmation bias
 \end{itemize}
 
-All models were fit using PyMC 2.3 \cite{Patil_2010},
-a software package for the Python programming language that fits
-Bayesian statistical models using Markov chain Monte Carlo (MCMC, \citet{Geyer_2011}) sampling. Each model was sampled for 50,000
-iterations using a Metropolis-Hastings sampling algorithm, with the
-first 40,000 samples discarded conservatively as a warmup period. Hence,
-all inference was based on the final 10,000 samples from each model run.
+All models were fit using PyMC 2.3 \cite{Patil_2010}, a software package for the Python programming language that fits
+Bayesian statistical models using Markov chain Monte Carlo \citep[MCMC]{Geyer_2011} sampling. Each model was sampled for 50,000 iterations using a Metropolis-Hastings sampling algorithm, with the first 40,000 samples discarded conservatively as a warmup period. Hence, all inference was based on the final 10,000 samples from each model run.
