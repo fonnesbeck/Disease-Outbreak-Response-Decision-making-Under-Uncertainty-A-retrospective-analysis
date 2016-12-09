@@ -25,7 +25,7 @@ We modeled the number of measles cases in each age class \(a\) and time step \(t
 where \(S_{a,t-1}\) is the number of susceptibles in age class a at time \(t-1\), \(I_{t-1}\) a row vector of the number of infected individuals in each age class at time \(t-1\), and \(B_a\) is the \(a\)th column of the Who Acquires Infection From Whom (WAIFW) matrix.  We model the WAIFW matrix as an assortative matrix \(B\)
 
 \[B = \left[{
-\begin{array}{c}
+\begin{array}{ccccc}
   {\beta} & {\beta \delta} & \ldots & {\beta \delta^{k-2}} & {\beta \delta^{k-1}}  \\
   {\beta \delta} & {\beta} & \ldots & {\beta \delta^{k-3}} & {\beta \delta^{k-2}} \\
 {\beta \delta^2} & {\beta \delta} & \ldots & {\beta \delta^{k-4}} & {\beta \delta^{k-3}}  \\
