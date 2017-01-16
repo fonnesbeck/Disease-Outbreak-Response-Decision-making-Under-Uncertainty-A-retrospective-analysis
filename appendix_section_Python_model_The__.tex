@@ -14,7 +14,7 @@ The notebook includes all data preparation steps, the full PyMC model, and diagn
 
 A major assumption of our model is the existence of a pool of excess susceptibles, perhaps the result of migrant influxes from other regions of Brazil that did not receive the same historical immunization regime. To assess the effect of this component on the fit of the model and the resulting estimates, we modularized the model to remove the availability of this population by setting a flag in the model code. This flag results in the infection process being generated entirely from the local susceptible population, rather than as a mixture of local and excess infections.
 
-The estimated $R_0$ value under this model was 56 (95 \% BCI = [53, 59]), which is much higher than typical reproduction numbers for measles. Hence, assuming a large number of excess susceptible adult individuals appears to be important in the development of a model with reasonable fit.
+The estimated $R_0$ value under this model was 56 (95 \% BCI = [53, 59]), which is much higher than typical reproduction numbers for measles\cite{Durrheim_2014}. Hence, assuming a large number of excess susceptible adult individuals appears to be important in the development of a model with reasonable fit.
 
 \textbf{Uncertainty in population immunity}
 
