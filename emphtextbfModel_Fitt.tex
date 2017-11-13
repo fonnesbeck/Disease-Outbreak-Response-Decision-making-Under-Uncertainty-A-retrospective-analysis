@@ -10,4 +10,4 @@ Our model was fit using data truncated at two different dates during the outbrea
 \end{itemize}
 
 All models were fit using PyMC 2.3 \cite{Patil_2010}, a software package for the Python programming language that fits
-Bayesian statistical models using Markov chain Monte Carlo \citep[MCMC]{Geyer_2011} sampling. Each model was sampled for 50,000 iterations using a Metropolis-Hastings sampling algorithm, with the first 40,000 samples discarded conservatively as a warmup period. Hence, all inference was based on the final 10,000 samples from each model run.
+Bayesian statistical models using Markov chain Monte Carlo \citep[MCMC]{Geyer_2011} sampling. Each model was sampled for 50,000 iterations using a Metropolis-Hastings sampling algorithm, with the first 40,000 samples discarded conservatively as a warmup period, and the remaining sample was assessed for lack of convergence using the Geweke diagnostic \cite{Geweke:1992tk}. Hence, all inference was based on the final 10,000 samples from each model run.
