@@ -16,13 +16,18 @@ were 5-year age intervals \emph{{[}0,5), {[}5, 10), \ldots{} , {[}70,
 75)}, with the last interval including all individuals 75 years and
 older. Since our choices of age group boundaries were arbitrary, we
 allowed the probabilities of adjacent groups to be correlated with one
-another. To this end, the logit-transformed set of probabilities was
+another. To this end, the transformed set of probabilities was
 modeled as a multivariate normal random variable: 
 
-\begin{eqnarray}
-\beta^{(conf)} &\sim& N(\mu, \Sigma) \\
+\[
+\beta^{(conf)} &\sim& N(\mu, \Sigma)
+\]
+
+where the transformation is the logit (\(\text{logit}(p) = \log[p / (1-p)] \)), which serves to convert probabilities (defined on the [0,1] interval) to the real line:
+
+\[
 \text{logit}(p_a) &=& \beta_a^{(conf)}
-\end{eqnarray}
+\]
 
 where the corresponding covariance matrix was tridiagonal, incorporating a
 correlation term \(\rho\)that was assumed constant among groups.
