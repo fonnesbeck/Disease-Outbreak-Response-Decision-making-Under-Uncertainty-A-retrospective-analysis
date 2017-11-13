@@ -30,7 +30,7 @@ where the transformation is the logit (\(\text{logit}(p) = \log[p / (1-p)] \)), 
 \]
 
 where the corresponding covariance matrix was tridiagonal, incorporating a
-correlation term \(\rho\)that was assumed constant among groups.
+correlation term \(\rho\) that was assumed, for simplicity, constant among groups. This was to allow confirmation rates to be correlated between neighboring age groups, since the age boundaries were arbitrarily defined.
 
 \[
 \Sigma = \left[{
@@ -52,11 +52,11 @@ x_a^{(clinic)} &\sim& \text{Bin}(n_a^{(clinic)},p_a) \\
 I_a &=& x_a^{(clinic)}+x_a^{(lab)}
 \end{eqnarray}
 
-The set of \(I = \{I_a\}\) was, in turn, used to inform the estimate of the latent age distribution of susceptibles, modeled as a Dirichlet distribution:
+The set of \(I = \{I_a\}\) was, in turn, used to inform the estimate of the latent age distribution of the infected class. A natural probability distribution to model age classes is the multinomial distribution, which is parameterized by a set of probabilities, here corresponding to the expected proportion in each age group; the corresponding prior for this vector of probabilities is the  Dirichlet distribution. These are specified by:
 
 \begin{eqnarray}
 f^{(age)} &\sim& \text{Dirichlet}(\mathbf{1}) \\
-I &\sim& \text{Multinomial}(f^{(age)})
+\{I_a\} &\sim& \text{Multinomial}(I, f^{(age)})
 \end{eqnarray}
 
-where \(f^{(age)}\)is a vector of age-specific proportions and \(\mathbf{1}\) a vector of ones, used as a non-informative prior for the Dirichlet.
+where \(f^{(age)}\)is a vector of age-specific proportions and \(\mathbf{1}\) a vector of ones, which is used as a non-informative prior for the Dirichlet.
