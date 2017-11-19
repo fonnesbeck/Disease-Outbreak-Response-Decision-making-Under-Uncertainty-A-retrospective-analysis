@@ -5,7 +5,9 @@ Model}}{Disease Dynamics Model}}\label{disease-dynamics-model}
 
 We used the population age structure in 1996 and the history of vaccination (through routine immunization and campaigns) prior to 1997 to estimate the initial number of susceptible individuals in each age class at the beginning of the 1997 outbreak.  We modeled the number of susceptible individuals in each annual age class at the beginning of 1997 \(S_{a,0}\) as a finite mixture of local susceptibles \(S_{a,0}^{(L)}\) and excess susceptibles \(S_{a,0}^{(E)}\), where excess susceptibles are defined as those that cannot be predicted from local demographic processes.  We model local susceptibles, \(S_a^{(L)}\) as a binomial draw from the Sao Paulo population:
 
-\[S_a^{(L)} \sim \text{Binomial}(N_a, p_s)\]
+\begin{equation}
+S_a^{(L)} \sim \text{Binomial}(N_a, p_s)
+\end{equation}
 
 where \(N_a\) is the population size in age class \(a\) and \(p_s\) the realized susceptibility. Uncertainty in this probability was specified with a beta distribution having expected value \(\mu_s\), which was calculated based on historical immunization activity in the city:
 
@@ -20,11 +22,14 @@ We modeled excess susceptibles using a data augmentation approach. A latent numb
 
 We modeled the number of measles cases in each age class \(a\) and time step \(t\) as a Poisson random variable:
 
-\[I_a \sim \text{Poisson}\left(S_{a,t-1} \frac{I_{t-1}B_a}{N} \right),\] 
+\begin{equation}
+I_a \sim \text{Poisson}\left(S_{a,t-1} \frac{I_{t-1}B_a}{N} \right),
+\end{equation}
 
 where \(S_{a,t-1}\) is the number of susceptibles in age class a at time \(t-1\), \(I_{t-1}\) a row vector of the number of infected individuals in each age class at time \(t-1\), and \(B_a\) is the \(a\)th column of the Who Acquires Infection From Whom (WAIFW) matrix.  We model the WAIFW matrix as an assortative matrix \(B\)
 
-\[B = \left[{
+\begin{equation}
+B = \left[{
 \begin{array}{ccccc}
   {\beta} & {\beta \delta} & \ldots & {\beta \delta^{k-2}} & {\beta \delta^{k-1}}  \\
   {\beta \delta} & {\beta} & \ldots & {\beta \delta^{k-3}} & {\beta \delta^{k-2}} \\
@@ -32,6 +37,7 @@ where \(S_{a,t-1}\) is the number of susceptibles in age class a at time \(t-1\)
   \vdots & \vdots & \ddots & \vdots & \vdots \\
   {\beta \delta^{k-1}} & {\beta \delta^{k-2}} & \ldots & {\beta \delta} & {\beta}  \\
 \end{array}
-}\right]\]
+}\right]
+\end{equation}
 
 that assumes that interaction among age groups declines exponentially with difference in age. The basic reproduction number, R\textsubscript{0}, in the model of the initial population size is taken as the dominant eigenvalue of the matrix B.
