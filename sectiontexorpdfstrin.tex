@@ -8,7 +8,9 @@ conditional on clinical diagnosis. Individual lab confirmation events
 \(c_i\) were modeled as Bernoulli random variables,
 with the probability of confirmation being allowed to vary by age group:
 
-\[c_{i} \sim Bernoulli(p_{a[i]})\]
+\begin{equation}
+c_{i} \sim Bernoulli(p_{a[i]})\]
+\end{equation}
 
 where \(a[i]\) denotes the age group for the individual
 indexed by \emph{i}. There were 16 age groups, the first 15 of which
@@ -19,20 +21,20 @@ allowed the probabilities of adjacent groups to be correlated with one
 another. To this end, the transformed set of probabilities was
 modeled as a multivariate normal random variable: 
 
-\[
+\begin{equation}
 \beta^{(conf)} \sim N(\mu, \Sigma)
-\]
+\end{equation}
 
 where the transformation is the logit (\(\text{logit}(p) = \log[p / (1-p)] \)), which serves to convert probabilities (defined on the [0,1] interval) to the real line:
 
-\[
+\begin{equation}
 \text{logit}(p_a) = \beta_a^{(conf)}
-\]
+\end{equation}
 
 where the corresponding covariance matrix was tridiagonal, incorporating a
 correlation term \(\rho\) that was assumed, for simplicity, constant among groups. This was to allow confirmation rates to be correlated between neighboring age groups, since the age boundaries were arbitrarily defined.
 
-\[
+\begin{equation}
 \Sigma = \left[{
 \begin{array}{cccccc}
   {\sigma^2} & {\sigma^2 \rho} & 0& \ldots & {0} & {0}  \\
@@ -42,7 +44,8 @@ correlation term \(\rho\) that was assumed, for simplicity, constant among group
   {0} & {0} & 0 & \ldots &  {\sigma^2} & \sigma^2 \rho  \\
 {0} & {0} & 0 & \ldots & \sigma^2 \rho &  {\sigma^2} 
 \end{array}
-}\right]\]
+}\right]
+\end{equation}
 
 
 To estimate the true (latent) number of cases for each age group \(I_a\), the estimated probabilities were used to correct the clinically-reported cases \(n_a^{(clinic)}\), as modeled by a binomial distribution, and the total number of cases then calculated as the sum of this estimated value \(x_a^{(clinic)}\) and the lab-confirmed cases \(x_a^{(lab)}\):
