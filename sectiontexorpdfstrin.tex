@@ -57,9 +57,11 @@ I_a &=& x_a^{(clinic)}+x_a^{(lab)}
 
 The set of \(I = \{I_a\}\) was, in turn, used to inform the estimate of the latent age distribution of the infected class. A natural probability distribution to model age classes is the multinomial distribution, which is parameterized by a set of probabilities, here corresponding to the expected proportion in each age group; the corresponding prior for this vector of probabilities is the  Dirichlet distribution. These are specified by:
 
-\begin{eqnarray}
-f^{(age)} &\sim& \text{Dirichlet}(\mathbf{1}) \\
-\{I_a\} &\sim& \text{Multinomial}(I, f^{(age)})
-\end{eqnarray}
+\begin{equation}
+\begin{aligned}
+f^{(age)} &\sim \text{Dirichlet}(\mathbf{1}) \\
+\{I_a\} &\sim \text{Multinomial}(I, f^{(age)})
+\end{aligned}
+\end{equation}
 
 where \(f^{(age)}\)is a vector of age-specific proportions and \(\mathbf{1}\) a vector of ones, which is used as a non-informative prior for the Dirichlet.
