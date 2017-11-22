@@ -51,10 +51,10 @@ correlation term \(\rho\) that was assumed, for simplicity, constant among group
 To estimate the true (latent) number of cases for each age group \(I_a\), the estimated probabilities were used to correct the clinically-reported cases \(n_a^{(clinic)}\), as modeled by a binomial distribution, and the total number of cases then calculated as the sum of this estimated value \(x_a^{(clinic)}\) and the lab-confirmed cases \(x_a^{(lab)}\):
 
 \begin{equation}
-\begin{aligned}
+\begin{split}
 x_a^{(clinic)} &\sim \text{Bin}(n_a^{(clinic)},p_a) \\
 I_a &= x_a^{(clinic)}+x_a^{(lab)}
-\end{aligned}
+\end{split}
 \end{equation}
 
 The set of \(I = \{I_a\}\) was, in turn, used to inform the estimate of the latent age distribution of the infected class. A natural probability distribution to model age classes is the multinomial distribution, which is parameterized by a set of probabilities, here corresponding to the expected proportion in each age group; the corresponding prior for this vector of probabilities is the  Dirichlet distribution. These are specified by:
