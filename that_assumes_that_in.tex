@@ -11,10 +11,12 @@ S_a^{(L)} \sim \text{Binomial}(N_a, p_s)
 
 where \(N_a\) is the population size in age class \(a\) and \(p_s\) the realized susceptibility. Uncertainty in this probability was specified with a beta distribution having expected value \(\mu_s\), which was calculated based on historical immunization activity in the city:
 
-\begin{eqnarray}
+\begin{equation}
+\begin{aligned}
 \mu_s &= \pi^{(\text{vacc})} \pi^{(\text{SIA})}\pi^{(\text{nat})} \\
 &= (1- 0.85 V_a) \prod_{j=1}^2 \left[1- \psi_j I_{a,j} \right] \left[\exp \sum_{y=0}^{a-1} \theta_{a-y} \right],
-\end{eqnarray}
+\end{aligned}
+\end{equation}
 
 where $\pi^{(\text{vacc})}$, $\pi^{(\text{SIA})}$, and $\pi^{(\text{nat})}$ are proportions of residual susceptibility following routine vaccination, SIA and natural immunity, \(V_a\) is the routine vaccination coverage experienced by age class \(a\) when they were eligible for routine vaccination between 9 and 12 months of age; we assume that efficacy of the routine dose is 85\% \cite{Uzicanin_2011}.  \(\psi_{j}\) the coverage of the \(j\)\textsuperscript{th} SIA and \(I_{a,j}\) is an indicator function that is 1 if age class a was eligible for the \(j\)\textsuperscript{th} SIA and 0 otherwise, and \(\theta_i\) the force of infection in year i (\emph{i.e.}, the contribution of natural immunity).  The force of infection is assumed to be \(1/A\) in the absence of vaccination, where \(A=\frac{L}{R_0}\) \cite{Anderson_1981} is the mean age of infection in the absence of vaccination, L is the life expectancy, and \(R_0\) is the basic reproduction number. The force of infection \(\theta_i\) in the presence of vaccination is then approximated as \((1-V_a)/A\) \cite{Anderson_1981}.  The basic reproduction number \(R_0\) is estimated below.  We present an analysis of sensitivity to assumptions about historical vaccination coverage in the supplement.
 
