@@ -1,13 +1,17 @@
 \textbf{Alternative contact matrix structure}
 
+To evaluate the sensitivity of our results to the assumed structure in contact rates among age groups, we fit an alternative model using a simplified network. Rather than have contact decline exponentially with the difference in age between groups, we here assumed that between-group contact was constant, governed by a coefficient $\rho$ that is applied to all off-diagonal elements of the matrix:
+
 \begin{equation}
 B = \left[{
 \begin{array}{ccccc}
-  {\beta} & {\beta \delta} & \ldots & {\beta \delta} & {\beta \delta}  \\
-  {\beta \delta} & {\beta} & \ldots & {\beta \delta} & {\beta \delta} \\
-{\beta \delta} & {\beta \delta} & \ldots & {\beta \delta} & {\beta \delta}  \\
+  {\beta} & {\beta \rho} & \ldots & {\beta \rho} & {\beta \rho}  \\
+  {\beta \rho} & {\beta} & \ldots & {\beta \rho} & {\beta \rho} \\
+{\beta \rho} & {\beta \rho} & \ldots & {\beta \rho} & {\beta \rho}  \\
   \vdots & \vdots & \ddots & \vdots & \vdots \\
-  {\beta \delta} & {\beta \delta} & \ldots & {\beta \delta} & {\beta}  \\
+  {\beta \rho} & {\beta \rho} & \ldots & {\beta \rho} & {\beta}  \\
 \end{array}
 }\right]
 \end{equation}
+
+The resulting estimates of vaccination thresholds based on this contact structure is shown in Figure A3. The estimates are qualitatively and quantitatively similar to the estimates based on a decaying inter-age contact assumption (Figure 5).
