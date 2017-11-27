@@ -22,4 +22,5 @@ appendix_section_Python_model_The__.tex
 figures/priors/Unknown.png
 For_supplemental_immunization_rather_than__.tex
 figures/Unknown1/Unknown.png
+textbf_Alternative_contact_matrix_structure__.tex
 figures/constant_corr/constant_corr.png
